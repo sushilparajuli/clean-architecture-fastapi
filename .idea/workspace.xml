@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04152499-06e3-4b83-8ea1-68962aa43171" name="Changes" comment="project initialized">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/config/env_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/data/source/local/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/data/source/local/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/features/admin/country/domain/country_entity.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/features/admin/country/infrastructure/mappers/map_country_entity_to_country_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/features/admin/country/infrastructure/mappers/map_country_model_to_country_entity.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/features/admin/country/infrastructure/models/country_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose-dev.yaml" afterDir="false" />
+    <list default="true" id="04152499-06e3-4b83-8ea1-68962aa43171" name="Changes" comment="clean architecture with docker setup done">
+      <change afterPath="$PROJECT_DIR$/app/features/admin/country/application/interface/icountry_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/features/admin/country/infrastructure/repositories/country_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/user-management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/user-management.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +24,65 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="4.43717198889255E-5" />
+      <entry key="MS500" value="0.13471668094094996" />
+      <entry key="S2" value="0.637786943546025" />
+      <entry key="S5" value="1.4155540406749956" />
+      <entry key="S10" value="2.808363101157847" />
+      <entry key="S30" value="6.18449559157406" />
+      <entry key="S60" value="8.734683864439148" />
+      <entry key="M2" value="11.656500018568051" />
+      <entry key="M5" value="16.75901312792886" />
+      <entry key="M10" value="22.78082872668584" />
+      <entry key="M15" value="26.66122105818979" />
+      <entry key="M30" value="32.3867751308906" />
+      <entry key="H1" value="36.24664567894586" />
+      <entry key="H2" value="38.49860192010274" />
+      <entry key="H4" value="39.716319835626074" />
+      <entry key="D1" value="40.78131100969653" />
+      <entry key="W1" value="40.96864040923696" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000820293657975" />
+      <entry key="S5" value="1.0232058634088228" />
+      <entry key="S10" value="1.1530635719234177" />
+      <entry key="S30" value="1.624172166182579" />
+      <entry key="S60" value="2.040475605474872" />
+      <entry key="M2" value="2.5937918394247275" />
+      <entry key="M5" value="4.158445107720349" />
+      <entry key="M10" value="5.907681383086238" />
+      <entry key="M15" value="6.88895098728143" />
+      <entry key="M30" value="8.206191481502422" />
+      <entry key="H1" value="9.032435341646512" />
+      <entry key="H2" value="9.496914963388859" />
+      <entry key="H4" value="9.743408778404268" />
+      <entry key="D1" value="9.956513733085755" />
+      <entry key="W1" value="9.993769752073101" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.002008035533350906" />
+      <entry key="MS500" value="0.3035946710588615" />
+      <entry key="S2" value="1.1126403993007092" />
+      <entry key="S5" value="2.1429803106835443" />
+      <entry key="S10" value="3.75844215397683" />
+      <entry key="S30" value="7.685627928070496" />
+      <entry key="S60" value="10.69535725820325" />
+      <entry key="M2" value="14.199989423078081" />
+      <entry key="M5" value="20.875495163053646" />
+      <entry key="M10" value="28.64681108523475" />
+      <entry key="M15" value="33.5129479310007" />
+      <entry key="M30" value="40.56737591038486" />
+      <entry key="H1" value="45.263947466558754" />
+      <entry key="H2" value="47.98727189040489" />
+      <entry key="H4" value="49.455423384366604" />
+      <entry key="D1" value="50.73708063069482" />
+      <entry key="W1" value="50.96230319268842" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7,
@@ -51,7 +102,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "junie.plugin.stays.banner.dismissed": "true",
     "last_opened_file_path": "/Users/sushilparajuli/Projects/fullStack/user-management/app/features/shared/auth",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
@@ -59,7 +113,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -85,6 +140,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
@@ -110,6 +166,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1786693315729</updated>
+      <workItem from="1786716754596" duration="2836000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <option name="closed" value="true" />
@@ -119,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786694333550</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="clean architecture with docker setup done">
+      <option name="closed" value="true" />
+      <created>1786704606928</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1786704606928</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +192,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project initialized" />
-    <option name="LAST_COMMIT_MESSAGE" value="project initialized" />
+    <MESSAGE value="clean architecture with docker setup done" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean architecture with docker setup done" />
   </component>
 </project>
