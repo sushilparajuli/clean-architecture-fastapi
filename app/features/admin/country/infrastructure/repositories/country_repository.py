@@ -22,7 +22,9 @@ class CountryRepository(ICountryRepository):
         return:
          list[CountryEntity]: List of countries
         """
-        result =  self.session.query(CountryModel).all()
+        countries =  self.session.query(CountryModel).all()
+        # Map country model to country entity
+        result = [map_country_model_to_country_entity(country) for country in countries]
         return result
 
     @override
