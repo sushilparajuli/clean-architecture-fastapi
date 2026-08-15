@@ -4,17 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04152499-06e3-4b83-8ea1-68962aa43171" name="Changes" comment="country repository list mapping issue fixed">
-      <change afterPath="$PROJECT_DIR$/app/core/providers/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/providers/env_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/features/admin/country/application/country_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/features/admin/country/interface/dependencies.py" afterDir="false" />
+    <list default="true" id="04152499-06e3-4b83-8ea1-68962aa43171" name="Changes" comment="country service/repository dependencies done">
+      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/data/source/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/data/source/local/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/data/source/local/alembic/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/router/route.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/features/admin/country/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/features/admin/country/interface/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/features/admin/country/interface/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="49df90b7-4ca3-44bb-a006-4a312dcf9cdb" value="" />
+    </colors>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="36" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -26,63 +45,83 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
+    {
+      "searchQuery": "get_versioned_router",
+      "state": "OPEN",
+      "assignee": "sushilparajuli"
+    }
+  ],
+  "lastFilter": {}
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sushilparajuli/clean-architecture-fastapi.git",
+    "accountId": "921f208b-03ad-4e1c-86f4-d2bb09ff2c62"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0000000000000053" />
-      <entry key="S10" value="1.0000000732083933" />
-      <entry key="S30" value="1.0061205269179858" />
-      <entry key="S60" value="1.214627827349855" />
-      <entry key="M2" value="2.9716679996137234" />
-      <entry key="M5" value="13.607172718047169" />
-      <entry key="M10" value="33.084283342049794" />
-      <entry key="M15" value="48.49916798718397" />
-      <entry key="M30" value="75.35008038209138" />
-      <entry key="H1" value="96.22631296918908" />
-      <entry key="H2" value="109.57437865734785" />
-      <entry key="H4" value="119.76242555179446" />
-      <entry key="D1" value="159.73305520280093" />
-      <entry key="W1" value="180.60510125864224" />
+      <entry key="MS100" value="1.9494916734891021" />
+      <entry key="MS500" value="3.6144287977742207" />
+      <entry key="S2" value="6.8595907863999575" />
+      <entry key="S5" value="8.968148769430657" />
+      <entry key="S10" value="10.461455052035134" />
+      <entry key="S30" value="18.54737539690018" />
+      <entry key="S60" value="32.14732965399656" />
+      <entry key="M2" value="48.23051991833771" />
+      <entry key="M5" value="70.74862224574589" />
+      <entry key="M10" value="97.60376981855462" />
+      <entry key="M15" value="117.41011933889281" />
+      <entry key="M30" value="161.87558127267687" />
+      <entry key="H1" value="230.44070897468177" />
+      <entry key="H2" value="309.6595734740377" />
+      <entry key="H4" value="376.01888023964966" />
+      <entry key="D1" value="482.16388501626005" />
+      <entry key="W1" value="518.699000999659" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.781134107196422E-128" />
-      <entry key="S2" value="1.1552451529331552E-32" />
-      <entry key="S5" value="1.6790824692833332E-13" />
-      <entry key="S10" value="4.11186124702938E-7" />
-      <entry key="S30" value="0.009739524968872898" />
-      <entry key="S60" value="0.1789999313216106" />
-      <entry key="M2" value="0.9706999955661291" />
-      <entry key="M5" value="3.822982554816791" />
-      <entry key="M10" value="8.119550786860644" />
-      <entry key="M15" value="11.444139144871244" />
-      <entry key="M30" value="17.24070036148469" />
-      <entry key="H1" value="21.760031134936778" />
-      <entry key="H2" value="24.65065767441094" />
-      <entry key="H4" value="26.808139181420895" />
-      <entry key="D1" value="34.90889850332729" />
-      <entry key="W1" value="39.1145446777632" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.208453820881125E-109" />
+      <entry key="S5" value="2.7101428185436367E-44" />
+      <entry key="S10" value="1.6716310161959416E-22" />
+      <entry key="S30" value="7.414712123523956E-8" />
+      <entry key="S60" value="5.356418810646088E-4" />
+      <entry key="M2" value="0.07456178000813914" />
+      <entry key="M5" value="2.0765705892704296" />
+      <entry key="M10" value="6.898567122655226" />
+      <entry key="M15" value="10.639021655980354" />
+      <entry key="M30" value="19.253968218827055" />
+      <entry key="H1" value="33.25337783697052" />
+      <entry key="H2" value="49.846426166705626" />
+      <entry key="H4" value="63.85171997734418" />
+      <entry key="D1" value="85.99231812874433" />
+      <entry key="W1" value="93.50327955141906" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9592641193252643" />
-      <entry key="MS500" value="0.9917167307382933" />
-      <entry key="S2" value="0.9979227189990506" />
-      <entry key="S5" value="0.9991685692137274" />
-      <entry key="S10" value="0.9995846102196029" />
-      <entry key="S30" value="1.0151534962070548" />
-      <entry key="S60" value="1.3886815916579172" />
-      <entry key="M2" value="3.927386916484954" />
-      <entry key="M5" value="17.39519880725244" />
-      <entry key="M10" value="41.159408327713436" />
-      <entry key="M15" value="59.89987470582283" />
-      <entry key="M30" value="92.55744871633783" />
-      <entry key="H1" value="117.96530595790146" />
-      <entry key="H2" value="134.21313868387517" />
-      <entry key="H4" value="146.56401906738247" />
-      <entry key="D1" value="194.6403497297685" />
-      <entry key="W1" value="219.71937629956068" />
+      <entry key="MS100" value="1.8714095802559816" />
+      <entry key="MS500" value="3.5827230976808577" />
+      <entry key="S2" value="6.842833368496975" />
+      <entry key="S5" value="8.959145076987717" />
+      <entry key="S10" value="10.456187757588252" />
+      <entry key="S30" value="18.5444771117013" />
+      <entry key="S60" value="32.14546614461988" />
+      <entry key="M2" value="48.301652552532644" />
+      <entry key="M5" value="72.8092529129012" />
+      <entry key="M10" value="104.47768000021085" />
+      <entry key="M15" value="128.02357723742426" />
+      <entry key="M30" value="181.1039031081178" />
+      <entry key="H1" value="263.6689129079106" />
+      <entry key="H2" value="359.4857311356633" />
+      <entry key="H4" value="439.85711956261315" />
+      <entry key="D1" value="568.1528992351418" />
+      <entry key="W1" value="612.2017480202726" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -100,10 +139,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "KEY_CHAT_IN_TOOLWINDOW": "false",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
@@ -119,6 +159,11 @@
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "to.speed.mode.migration.done": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -127,6 +172,9 @@
       <recent name="$PROJECT_DIR$/app/features/client/user" />
       <recent name="$PROJECT_DIR$/app/features/admin/company" />
       <recent name="$PROJECT_DIR$/app/features/admin/country" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/core/data/source/local" />
     </key>
   </component>
   <component name="RunManager">
@@ -170,7 +218,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1786693315729</updated>
-      <workItem from="1786716754596" duration="7126000" />
+      <workItem from="1786716754596" duration="14226000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <option name="closed" value="true" />
@@ -204,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786780041721</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="country service/repository dependencies done">
+      <option name="closed" value="true" />
+      <created>1786782592351</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1786782592351</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +271,7 @@
     <MESSAGE value="clean architecture with docker setup done" />
     <MESSAGE value="country repository done" />
     <MESSAGE value="country repository list mapping issue fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="country repository list mapping issue fixed" />
+    <MESSAGE value="country service/repository dependencies done" />
+    <option name="LAST_COMMIT_MESSAGE" value="country service/repository dependencies done" />
   </component>
 </project>
