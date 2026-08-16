@@ -11,6 +11,12 @@ class CreateCountryRequest(BaseModel):
     country_code: str
     currency_code: str
 
+class PaginationMeta(BaseModel):
+    total: int
+    total_pages: int
+    page_size: int
+    current_page: int
+
 
 class UpdateCountryRequest(BaseModel):
     name: Optional[str] = None
@@ -20,6 +26,7 @@ class UpdateCountryRequest(BaseModel):
 class CountryListResponse(BaseModel):
     status: str
     data: List[CountryEntity]
+    meta: PaginationMeta
 
 
 class CountryResponse(BaseModel):

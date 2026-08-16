@@ -8,7 +8,7 @@ class ICountryRepository(ABC):
     Interface for country repository
     """
     @abstractmethod
-    def get_all_countries(self) -> list[CountryEntity]:
+    def get_all_countries(self, skip: int, limit: int) -> tuple[list[CountryEntity], int, int]:
         """
         Get all countries
         """

@@ -1,6 +1,7 @@
 from typing import Annotated
 
 from fastapi import Depends
+from fastapi.params import Query
 from starlette import status
 
 from app.core.router.route import get_versioned_router
@@ -10,21 +11,30 @@ from app.features.admin.country.infrastructure.mappers.map_country_schema_to_ent
 from app.features.admin.country.infrastructure.mappers.map_country_update_schema_to_entity import map_country_update_schema_to_entity
 from app.features.admin.country.interface.dependencies import get_country_service
 from app.features.admin.country.interface.schemas import CountryListResponse, CountryResponse, DeleteResponse, \
-    CreateCountryRequest, UpdateCountryRequest
+    CreateCountryRequest, UpdateCountryRequest, PaginationMeta
 
 v1_router = get_versioned_router("v1")
 
 @v1_router.get("/admin/countries")
 def get_countries(
+        skip: Annotated[int, Query(ge=1, description="Page number should be be greater than or equal to 1")],
+        limit: Annotated[int, Query(ge=1, description="Page size should be be greater than or equal to 1")],
         country_service: Annotated[CountryService, Depends(get_country_service)],
 ) -> CountryListResponse:
     """
     Get all countries
+    :param skip:
+    :param limit:
     :param country_service:
     :return: CountryListResponse
     """
-    result = country_service.get_all_countries()
-    return CountryListResponse(status="success", data=result)
+    result, total, total_pages = country_service.get_all_countries(skip-1, limit)
+    meta : PaginationMeta = PaginationMeta(
+        total=total,
+        total_pages=total_pages,
+        page_size=limit,
+        current_page=skip)
+    return CountryListResponse(status="success", data=result, meta=meta)
 
 @v1_router.get("/admin/countries/{country_id}")
 def get_countries_by_id(
