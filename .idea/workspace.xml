@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04152499-06e3-4b83-8ea1-68962aa43171" name="Changes" comment="pagination integration done">
-      <change afterPath="$PROJECT_DIR$/app/core/exceptions/repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/http_errors.py" afterDir="false" />
+    <list default="true" id="04152499-06e3-4b83-8ea1-68962aa43171" name="Changes" comment="register exception handlers and update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/features/admin/country/infrastructure/repositories/country_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/features/admin/country/infrastructure/repositories/country_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,61 +54,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000142369536063" />
-      <entry key="MS500" value="1.1078918063532601" />
-      <entry key="S2" value="1.781886077632751" />
-      <entry key="S5" value="2.798281313882333" />
-      <entry key="S10" value="3.7926793410807322" />
-      <entry key="S30" value="5.274011721569644" />
-      <entry key="S60" value="7.090228370288888" />
-      <entry key="M2" value="11.842336481249939" />
-      <entry key="M5" value="27.168009834703277" />
-      <entry key="M10" value="46.414312170824935" />
-      <entry key="M15" value="60.745932472006956" />
-      <entry key="M30" value="91.60783107767453" />
-      <entry key="H1" value="127.71855796843658" />
-      <entry key="H2" value="159.48883642196634" />
-      <entry key="H4" value="190.54785572694396" />
-      <entry key="D1" value="496.9717774819398" />
-      <entry key="W1" value="750.673336918525" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000003941193962" />
+      <entry key="S5" value="1.0028720512805938" />
+      <entry key="S10" value="1.072930111303338" />
+      <entry key="S30" value="2.1860257823385076" />
+      <entry key="S60" value="4.179364248954703" />
+      <entry key="M2" value="7.309271389289544" />
+      <entry key="M5" value="17.272423604312586" />
+      <entry key="M10" value="38.08082337557458" />
+      <entry key="M15" value="57.10459001229435" />
+      <entry key="M30" value="99.49054298904248" />
+      <entry key="H1" value="148.3939100686996" />
+      <entry key="H2" value="191.75938165658067" />
+      <entry key="H4" value="230.79060919742832" />
+      <entry key="D1" value="544.2193122449044" />
+      <entry key="W1" value="801.6653173398563" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="9.689900414774239E-188" />
-      <entry key="S2" value="1.7643300392845333E-47" />
-      <entry key="S5" value="1.9889869398556184E-19" />
-      <entry key="S10" value="4.4598684393957134E-10" />
-      <entry key="S30" value="7.875532224110838E-4" />
-      <entry key="S60" value="0.03636018456392111" />
-      <entry key="M2" value="0.4071846022656197" />
-      <entry key="M5" value="2.6543928218749517" />
-      <entry key="M10" value="5.585426982818146" />
-      <entry key="M15" value="7.535898097178774" />
-      <entry key="M30" value="11.56112890175137" />
-      <entry key="H1" value="16.317914808881177" />
-      <entry key="H2" value="20.547079859124565" />
-      <entry key="H4" value="25.12740515764037" />
-      <entry key="D1" value="80.5388816793773" />
-      <entry key="W1" value="127.71912041098231" />
+      <entry key="MS500" value="1.8806798294218156E-66" />
+      <entry key="S2" value="3.703265711074882E-17" />
+      <entry key="S5" value="2.706429793764407E-7" />
+      <entry key="S10" value="5.727375070103108E-4" />
+      <entry key="S30" value="0.12011315776951209" />
+      <entry key="S60" value="0.5355644802346401" />
+      <entry key="M2" value="1.321292522737051" />
+      <entry key="M5" value="2.9247402823853563" />
+      <entry key="M10" value="5.361424025726514" />
+      <entry key="M15" value="7.563205201814876" />
+      <entry key="M30" value="12.595170490958335" />
+      <entry key="H1" value="18.661409936238297" />
+      <entry key="H2" value="24.191523324864583" />
+      <entry key="H4" value="29.677931177390384" />
+      <entry key="D1" value="85.79474765069891" />
+      <entry key="W1" value="133.55168991407442" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9526516550427003" />
-      <entry key="MS500" value="1.0973363030998626" />
-      <entry key="S2" value="1.7774885409053163" />
-      <entry key="S5" value="2.795274332407918" />
-      <entry key="S10" value="3.790508721830351" />
-      <entry key="S30" value="5.263416060441601" />
-      <entry key="S60" value="7.092341606297288" />
-      <entry key="M2" value="12.199957859475731" />
-      <entry key="M5" value="29.768071826766754" />
-      <entry key="M10" value="51.953963736970444" />
-      <entry key="M15" value="68.24336646358188" />
-      <entry key="M30" value="103.14196924579127" />
-      <entry key="H1" value="144.01863928789544" />
-      <entry key="H2" value="180.02511602878752" />
-      <entry key="H4" value="215.6688806223134" />
-      <entry key="D1" value="577.5075533176298" />
-      <entry key="W1" value="878.391746231479" />
+      <entry key="MS100" value="7.452437543752732E-4" />
+      <entry key="MS500" value="0.23684251764981692" />
+      <entry key="S2" value="0.6976138416215475" />
+      <entry key="S5" value="0.8683509420033644" />
+      <entry key="S10" value="0.9992295766991779" />
+      <entry key="S30" value="2.2502932125032684" />
+      <entry key="S60" value="4.650225407487605" />
+      <entry key="M2" value="8.563834614193052" />
+      <entry key="M5" value="20.14028639356038" />
+      <entry key="M10" value="43.39237190881426" />
+      <entry key="M15" value="64.62294072789547" />
+      <entry key="M30" value="112.05146606086858" />
+      <entry key="H1" value="167.0318576576839" />
+      <entry key="H2" value="215.93646116828205" />
+      <entry key="H4" value="260.4600674991027" />
+      <entry key="D1" value="630.0105695575584" />
+      <entry key="W1" value="935.2162379720564" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -208,7 +206,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1786693315729</updated>
-      <workItem from="1786716754596" duration="23716000" />
+      <workItem from="1786716754596" duration="24705000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <option name="closed" value="true" />
@@ -282,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786869063288</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="register exception handlers and update">
+      <option name="closed" value="true" />
+      <created>1786871092177</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1786871092177</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +303,8 @@
     <MESSAGE value="alembic dependency added and updated for versioning" />
     <MESSAGE value="all APIs integration done" />
     <MESSAGE value="pagination integration done" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination integration done" />
+    <MESSAGE value="register exception handlers and update" />
+    <option name="LAST_COMMIT_MESSAGE" value="register exception handlers and update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
