@@ -13,4 +13,4 @@ def get_db_session() -> Generator[Session, None, None]:
     Generator of database session
     """
     session = Database(get_env_config()).get_session()
-    return session
+    yield from session

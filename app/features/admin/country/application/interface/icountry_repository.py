@@ -31,7 +31,7 @@ class ICountryRepository(ABC):
     @abstractmethod
     def update_country(self, country_id: int, country: CountryEntity) -> CountryEntity:
         """
-        update  country
+        update country
         """
         pass
 

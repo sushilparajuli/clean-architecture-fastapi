@@ -6,8 +6,11 @@ from starlette import status
 from app.core.router.route import get_versioned_router
 from app.features.admin.country.application.country_service import CountryService
 from app.features.admin.country.domain.country_entity import CountryEntity
+from app.features.admin.country.infrastructure.mappers.map_country_schema_to_entity import map_country_schema_to_entity
+from app.features.admin.country.infrastructure.mappers.map_country_update_schema_to_entity import map_country_update_schema_to_entity
 from app.features.admin.country.interface.dependencies import get_country_service
-from app.features.admin.country.interface.schemas import CountryListResponse, CountryResponse, DeleteResponse
+from app.features.admin.country.interface.schemas import CountryListResponse, CountryResponse, DeleteResponse, \
+    CreateCountryRequest, UpdateCountryRequest
 
 v1_router = get_versioned_router("v1")
 
@@ -39,21 +42,26 @@ def get_countries_by_id(
 
 @v1_router.post("/admin/countries")
 def create_country(
-        data: CountryEntity,
+        data: CreateCountryRequest,
         country_service: Annotated[CountryService, Depends(get_country_service)],
 
 )-> CountryResponse:
-    result = country_service.create_country(data)
+    data_entity = map_country_schema_to_entity(data)
+    result = country_service.create_country(data_entity)
     return CountryResponse(status="success", data=result)
+
+
+
 
 @v1_router.patch("/admin/countries")
 def patch_country(
         country_id: int,
-        data: CountryEntity,
+        data: UpdateCountryRequest,
         country_service: Annotated[CountryService, Depends(get_country_service)],
 
 )-> CountryResponse:
-    result = country_service.update_country(country_id,data)
+    update_entity = map_country_update_schema_to_entity(data)
+    result = country_service.update_country(country_id,update_entity)
     return CountryResponse(status="success", data=result)
 
 @v1_router.delete("/admin/countries", status_code= status.HTTP_204_NO_CONTENT)

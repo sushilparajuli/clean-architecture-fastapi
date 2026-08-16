@@ -46,7 +46,7 @@ class CountryRepository(ICountryRepository):
         """
         Create new country
         arg:
-            country (CountryEntity)  : Country entity
+            country (CountryEntity): Country entity
         return
             None
         """
@@ -59,13 +59,13 @@ class CountryRepository(ICountryRepository):
     @override
     def update_country(self, country_id:int, country: CountryEntity):
         """
-        Update  country
+        Update country
         arg:
-            country (CountryEntity)  : Country entity
+            country (CountryEntity): Country entity
         return
             CountryEntity: Country entity
         """
-        result = self.session.query(CountryModel).filter(CountryModel.id == country.id).first()
+        result = self.session.query(CountryModel).filter(CountryModel.id == country_id).first()
         if not result:
             raise ValueError(f"Country with ID {country_id} not found")
 
@@ -73,8 +73,8 @@ class CountryRepository(ICountryRepository):
         # 3. Dynamic patch update: loop through attributes and set valid values
         for key, value in country_data.items():
             # Update only provided/non-None fields, match DB schema, and protect the primary key
-            if value is not None and hasattr(country_model, key) and key != 'id':
-                setattr(country_model, key, value)
+            if value is not None and hasattr(result, key) and key != 'id':
+                setattr(result, key, value)
         # 3. Commit changes (SQLAlchemy auto-tracks modifications to country_model)
         self.session.commit()
         self.session.refresh(result)
@@ -84,9 +84,9 @@ class CountryRepository(ICountryRepository):
     @override
     def delete_country(self, country_id:int) -> None:
         """
-        Delete  country
+        Delete country
         arg:
-           country_id (int) : Country id
+           country_id (int): Country id
         :return
         None
         """
@@ -95,5 +95,4 @@ class CountryRepository(ICountryRepository):
             raise ValueError(f"Country with ID {country_id} not found")
         self.session.delete(data)
         self.session.commit()
-        self.session.refresh(data)
         return None
