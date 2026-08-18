@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04152499-06e3-4b83-8ea1-68962aa43171" name="Changes" comment="register exception handlers and update">
+    <list default="true" id="04152499-06e3-4b83-8ea1-68962aa43171" name="Changes" comment="repository exceptions handling done">
+      <change afterPath="$PROJECT_DIR$/app/core/exceptions/domain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/features/admin/country/domain/exceptions/exception.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/http_errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/http_errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/features/admin/country/application/country_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/features/admin/country/application/country_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/features/admin/country/application/interface/icountry_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/features/admin/country/application/interface/icountry_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/features/admin/country/infrastructure/repositories/country_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/features/admin/country/infrastructure/repositories/country_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/features/admin/country/interface/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/features/admin/country/interface/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,83 +38,83 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "searchQuery": "get_versioned_router",
-      "state": "OPEN",
-      "assignee": "sushilparajuli"
+      &quot;searchQuery&quot;: &quot;get_versioned_router&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;sushilparajuli&quot;
     }
   ],
-  "lastFilter": {}
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sushilparajuli/clean-architecture-fastapi.git",
-    "accountId": "921f208b-03ad-4e1c-86f4-d2bb09ff2c62"
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sushilparajuli/clean-architecture-fastapi.git&quot;,
+    &quot;accountId&quot;: &quot;921f208b-03ad-4e1c-86f4-d2bb09ff2c62&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000003941193962" />
-      <entry key="S5" value="1.0028720512805938" />
-      <entry key="S10" value="1.072930111303338" />
-      <entry key="S30" value="2.1860257823385076" />
-      <entry key="S60" value="4.179364248954703" />
-      <entry key="M2" value="7.309271389289544" />
-      <entry key="M5" value="17.272423604312586" />
-      <entry key="M10" value="38.08082337557458" />
-      <entry key="M15" value="57.10459001229435" />
-      <entry key="M30" value="99.49054298904248" />
-      <entry key="H1" value="148.3939100686996" />
-      <entry key="H2" value="191.75938165658067" />
-      <entry key="H4" value="230.79060919742832" />
-      <entry key="D1" value="544.2193122449044" />
-      <entry key="W1" value="801.6653173398563" />
+      <entry key="MS100" value="2.244203591273228" />
+      <entry key="MS500" value="4.053162015120245" />
+      <entry key="S2" value="4.731642600220136" />
+      <entry key="S5" value="4.889810922397913" />
+      <entry key="S10" value="4.944418234357714" />
+      <entry key="S30" value="4.981363249499356" />
+      <entry key="S60" value="4.990667860654545" />
+      <entry key="M2" value="4.995332030450929" />
+      <entry key="M5" value="5.028455067312447" />
+      <entry key="M10" value="6.003770392368377" />
+      <entry key="M15" value="8.286741832179654" />
+      <entry key="M30" value="15.840400519946218" />
+      <entry key="H1" value="24.738739279671197" />
+      <entry key="H2" value="31.651724693627546" />
+      <entry key="H4" value="36.0903355767729" />
+      <entry key="D1" value="212.70955352607777" />
+      <entry key="W1" value="793.8063927348487" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.8806798294218156E-66" />
-      <entry key="S2" value="3.703265711074882E-17" />
-      <entry key="S5" value="2.706429793764407E-7" />
-      <entry key="S10" value="5.727375070103108E-4" />
-      <entry key="S30" value="0.12011315776951209" />
-      <entry key="S60" value="0.5355644802346401" />
-      <entry key="M2" value="1.321292522737051" />
-      <entry key="M5" value="2.9247402823853563" />
-      <entry key="M10" value="5.361424025726514" />
-      <entry key="M15" value="7.563205201814876" />
-      <entry key="M30" value="12.595170490958335" />
-      <entry key="H1" value="18.661409936238297" />
-      <entry key="H2" value="24.191523324864583" />
-      <entry key="H4" value="29.677931177390384" />
-      <entry key="D1" value="85.79474765069891" />
-      <entry key="W1" value="133.55168991407442" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="9.020488161791053E-177" />
+      <entry key="S10" value="1.3622764352156972E-88" />
+      <entry key="S30" value="1.0070709556823734E-29" />
+      <entry key="S60" value="6.177766855660413E-15" />
+      <entry key="M2" value="1.7983024223671992E-7" />
+      <entry key="M5" value="0.0064386248209615405" />
+      <entry key="M10" value="0.22336212743349054" />
+      <entry key="M15" value="0.7335572635669012" />
+      <entry key="M30" value="2.4179568785184116" />
+      <entry key="H1" value="4.396063356083159" />
+      <entry key="H2" value="5.929605978749409" />
+      <entry key="H4" value="6.9054497045298815" />
+      <entry key="D1" value="36.56265648380289" />
+      <entry key="W1" value="137.41307607517453" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="7.452437543752732E-4" />
-      <entry key="MS500" value="0.23684251764981692" />
-      <entry key="S2" value="0.6976138416215475" />
-      <entry key="S5" value="0.8683509420033644" />
-      <entry key="S10" value="0.9992295766991779" />
-      <entry key="S30" value="2.2502932125032684" />
-      <entry key="S60" value="4.650225407487605" />
-      <entry key="M2" value="8.563834614193052" />
-      <entry key="M5" value="20.14028639356038" />
-      <entry key="M10" value="43.39237190881426" />
-      <entry key="M15" value="64.62294072789547" />
-      <entry key="M30" value="112.05146606086858" />
-      <entry key="H1" value="167.0318576576839" />
-      <entry key="H2" value="215.93646116828205" />
-      <entry key="H4" value="260.4600674991027" />
-      <entry key="D1" value="630.0105695575584" />
-      <entry key="W1" value="935.2162379720564" />
+      <entry key="MS100" value="2.152399022466425" />
+      <entry key="MS500" value="4.010136362638041" />
+      <entry key="S2" value="4.718192903029999" />
+      <entry key="S5" value="4.884171238913926" />
+      <entry key="S10" value="4.941553196856392" />
+      <entry key="S30" value="4.980398011583278" />
+      <entry key="S60" value="4.990183951986876" />
+      <entry key="M2" value="4.995089926890307" />
+      <entry key="M5" value="5.034754281203667" />
+      <entry key="M10" value="6.2263900289461445" />
+      <entry key="M15" value="9.018756427528665" />
+      <entry key="M30" value="18.255854286711326" />
+      <entry key="H1" value="29.132531176545235" />
+      <entry key="H2" value="37.57979873276095" />
+      <entry key="H4" value="42.994891188741136" />
+      <entry key="D1" value="249.27094684315392" />
+      <entry key="W1" value="931.2187309648614" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -123,36 +129,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "KEY_CHAT_IN_TOOLWINDOW": "false",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "junie.plugin.stays.banner.dismissed": "true",
-    "last_opened_file_path": "/Users/sushilparajuli/Projects/fullStack/user-management/app/features/admin/country/infrastructure/mappers",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;KEY_CHAT_IN_TOOLWINDOW&quot;: &quot;false&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;junie.plugin.stays.banner.dismissed&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sushilparajuli/Projects/fullStack/user-management/app/features/admin/country/infrastructure/mappers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/features/admin/country/infrastructure/mappers" />
@@ -206,7 +212,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1786693315729</updated>
-      <workItem from="1786716754596" duration="24705000" />
+      <workItem from="1786716754596" duration="31524000" />
     </task>
     <task id="LOCAL-00001" summary="project initialized">
       <option name="closed" value="true" />
@@ -288,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786871092177</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="repository exceptions handling done">
+      <option name="closed" value="true" />
+      <created>1786872310031</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1786872310031</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,17 +318,7 @@
     <MESSAGE value="all APIs integration done" />
     <MESSAGE value="pagination integration done" />
     <MESSAGE value="register exception handlers and update" />
-    <option name="LAST_COMMIT_MESSAGE" value="register exception handlers and update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/features/admin/country/interface/api.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="repository exceptions handling done" />
+    <option name="LAST_COMMIT_MESSAGE" value="repository exceptions handling done" />
   </component>
 </project>

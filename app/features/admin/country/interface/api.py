@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, Optional
 
 from fastapi import Depends
 from fastapi.params import Query
@@ -17,18 +17,20 @@ v1_router = get_versioned_router("v1")
 
 @v1_router.get("/admin/countries")
 def get_countries(
+        country_service: Annotated[CountryService, Depends(get_country_service)],
         skip: Annotated[int, Query(ge=1, description="Page number should be be greater than or equal to 1")],
         limit: Annotated[int, Query(ge=1, description="Page size should be be greater than or equal to 1")],
-        country_service: Annotated[CountryService, Depends(get_country_service)],
+        search: Annotated[Optional[str], Query(description="Search query for country name ")] = None
 ) -> CountryListResponse:
     """
     Get all countries
+    :param search:
     :param skip:
     :param limit:
     :param country_service:
     :return: CountryListResponse
     """
-    result, total, total_pages = country_service.get_all_countries(skip-1, limit)
+    result, total, total_pages = country_service.get_all_countries(skip-1, limit,search)
     meta : PaginationMeta = PaginationMeta(
         total=total,
         total_pages=total_pages,
