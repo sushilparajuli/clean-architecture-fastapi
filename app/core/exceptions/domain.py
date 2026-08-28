@@ -6,3 +6,9 @@ class NotFoundException(DomainException):
 
 class AlreadyExistsException(DomainException):
     pass
+
+class UnauthorizedException(DomainException):
+    pass
+
+class ForbiddenException(DomainException):
+    pass
