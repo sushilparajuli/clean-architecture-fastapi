@@ -1,0 +1,38 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# JetBrains / IDE
+.idea/
+*.iml
+*.iws
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Testing & Coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Distribution & Build
+dist/
+build/
+*.egg-info/
+
+# Operating System files
+.DS_Store
+Thumbs.db
