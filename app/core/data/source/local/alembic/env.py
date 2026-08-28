@@ -30,6 +30,8 @@ from app.core.data.source.local.base import  Base
 try:
     # import the country model
     from app.features.admin.country.infrastructure.models.country_model import CountryModel
+    from app.features.auth.infrastructure.models.user_model import UserModel
+    from app.features.auth.infrastructure.models.audit_log_model import AuditLogModel
 except ImportError:
     raise ValueError("Models not found")
 

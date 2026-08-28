@@ -7,6 +7,11 @@ class EnvConfig(BaseSettings):
     db_name: str
     db_port: int
     db_host: str
+    jwt_secret_key: str = "secret-key-user-mgmt-very-secure-random-12345"
+    jwt_algorithm: str = "HS256"
+    access_token_expire_minutes: int = 30
+    refresh_token_expire_days: int = 7
+    bcrypt_rounds: int = 12
 
     model_config = SettingsConfigDict(
         env_file=".env",

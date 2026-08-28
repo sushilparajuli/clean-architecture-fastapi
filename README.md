@@ -35,6 +35,14 @@ For convenience, a `Makefile` is included to streamline common development tasks
 - `make db-up`: Start the database container.
 - `make db-down`: Stop the database container.
 - `make run`: Start the development server.
+- `make migrate`: Run all pending database migrations (`alembic upgrade head`).
+- `make migrate-down`: Rollback the latest migration (`alembic downgrade -1`).
+- `make migrate-create name=<revision_name>`: Create a new migration revision.
+- `make migrate-history`: View migration history.
+- `make test`: Run the full test suite.
+- `make test-unit`: Run unit tests.
+- `make test-integration`: Run integration tests.
+- `make test-v`: Run tests with verbose output.
 
 ### Environment Variables
 
@@ -55,6 +63,11 @@ DB_PASSWORD=postgres
 DB_NAME=user_management_app
 DB_PORT=5432
 DB_HOST=localhost
+JWT_SECRET_KEY=secret-key-user-mgmt-very-secure-random-12345
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+REFRESH_TOKEN_EXPIRE_DAYS=7
+BCRYPT_ROUNDS=12
 ```
 
 ### Database Setup (Docker)
